@@ -13,6 +13,7 @@ body {
     --border-color: #E7E9FC;
     --grey-color: #8E8F99;
     --hover-second-btn-color: #31D0AA;
+    --color-input: #6D6D7B;
     
 }
 
@@ -228,12 +229,10 @@ img {
     }
 }
 
-/* .list .item-contact-nav + .item-contact-nav {
-    margin-left: 40px;
-} */
-
-
 .contact {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 1.16;
     letter-spacing: 0.02em;
     color: var(--general-color);
     font-style: normal;
@@ -246,18 +245,10 @@ img {
     color: var(--second-color);
 }
 
-@media (min-width: 320px){
-    .contact {
-        font-size: 12px;
-        font-weight: 400;
-        line-height: 1.16;
-    }
-}
 
-@media (min-width: 768px){
+@media (min-width: 1158px){
     .contact {
         font-size: 16px;
-        font-weight: 400;
         line-height: 1.5;
     }
 }
@@ -379,56 +370,38 @@ img {
     display: flex;
 }
 
-.features-list .features-items:not(:last-child) {
-    margin-right: 24px;
-}
 
-@media (min-width: 320px) {
+@media (min-width: 320px) and (max-width: 1157px) {
     .features-list {
-        display: block;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 }
 
-@media (min-width: 320px) {
+@media (min-width: 320px) and (max-width: 767px) {
     .features-list .features-items:not(:last-child) {
         margin-right: 0;
         margin-bottom: 72px;
     }
 }
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1157px) {
     .features-list {
-        display: flex;
-        flex-wrap: wrap;
-        margin-bottom: 0;
-        justify-content: center;
+        row-gap: 72px;
+        column-gap: 24px;
     }
 }
-
-@media (min-width: 768px) {
-    .features-list .features-items:nth-child(2n+1) {
-        margin-right: 24px;
-        margin-bottom: 72px;
-    }
-}
-
 
 @media (min-width: 1158px) {
     .features-list {
-        display: flex;
         flex-wrap: nowrap;
-    }
-}
-
-@media (min-width: 1158px) {
-    .features-list .features-items:not(:last-child) {
-        margin-right: 24px;
+        gap: 24px;
     }
 }
 
 @media (min-width: 768px) {
     .features-items {
-        flex-basis: calc(100% / 2);
+        flex-basis: calc((100% - 24px) / 2);
         max-width: 356px;
     }
 }
@@ -767,22 +740,20 @@ svg.customer-icon {
 .portfolio-ex {
     display: flex;
     flex-wrap: wrap;
+    justify-content: center;
 
 }
 
 @media (min-width: 320px) and (max-width: 1157px) {
     .portfolio-ex {
-        display: flex;
-        justify-content: center;
         row-gap: 48px;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1157px) {
     .portfolio-ex {
-        row-gap: 72px;
-        column-gap: 24px;
-        flex-direction: column;
+        column-gap: 18px;
+        justify-content: start;
     }
 }
 
@@ -1025,6 +996,12 @@ footer {
     position: relative;
 }
 
+@media (min-width: 320px) and (max-width: 767px) {
+    .footer-form-container {
+        width: 100%;
+    }
+}
+
 @media (min-width: 768px) and (max-width: 1157px) {
     .footer-form-container {
         margin-left: -43px;
@@ -1041,28 +1018,43 @@ footer {
     line-height: 1.5;
     letter-spacing: 0.02em;
     color: var(--white-color);
+    text-align: center;
 }
 
-.footer-form input{
+@media (min-width: 768px) {
+    .legend-footer {
+        text-align: start;
+    }
+}
 
-    border: 1px solid #FFFFFF;
+.footer-input{
+
+    border: 1px solid var(--color-input);
     box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
     border-radius: 4px;
     background-color: transparent;
     width: 264px;
     height: 40px;
+    padding: 8px 0px 8px 16px;
 
     flex: 1;
+    outline: none;
+    color: var(--white-color);
 }
 
+.footer-input:focus {
+    border: 1px solid var(--second-color);   
+}
+
+
 @media (min-width: 320px) {
-    .footer-form input {
-        max-width: 398px;
+    .footer-input {
+        width: 100%;
     }
 }
 
 @media (min-width: 768px) {
-    .footer-form input {
+    .footer-input {
         width: 264px;
     }
 }
@@ -1130,11 +1122,6 @@ footer {
     color: var(--white-color);
 }
 
-.footer-input {
-    padding: 8px 0px 8px 16px;
-    color: var(--white-color);
-}
-
 .footer-input::placeholder {
     display: flex;
     margin-bottom: 4px;
@@ -1144,7 +1131,7 @@ footer {
     line-height: 1.16;
     letter-spacing: 0.04em;
 
-    color: var(--white-color);
+    color: var(--color-input);
 }
 
 @media (min-width: 320px) and (max-width: 767px) {
@@ -1357,7 +1344,7 @@ textarea::placeholder{
 .checkbox-input {
     width: 16px;
     height: 16px;
-    border: 1px solid #2E2F42;
+    border: 1px solid var(--main-color);
     border-radius: 2px;
 
     /* position: absolute;
