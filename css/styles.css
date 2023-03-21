@@ -693,14 +693,14 @@ svg.customer-icon {
 
 @media (min-width: 768px) and (max-width: 1157px) {
     .portfolio-ex {
-        column-gap: 18px;
+        column-gap: 24px;
         justify-content: start;
     }
 }
 
 @media (min-width: 768px) and (max-width: 1157px) {
     .portfolio-ex .items {
-        flex-basis: calc((100% - 768px) / 2);
+        flex-basis: calc((100% - 24px) / 2);
     }
 }
 
@@ -732,7 +732,6 @@ svg.customer-icon {
     border-right: 1px solid var(--border-color);
     border-left: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
-    min-width: 360px;
 
 }
 
@@ -764,6 +763,11 @@ svg.customer-icon {
 .portfolio-thumb {
     position: relative;
     overflow: hidden;
+}
+
+.portfolio-thumb img {
+    max-width: 100%;
+    height: auto;
 }
 
 
